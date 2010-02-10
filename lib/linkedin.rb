@@ -13,6 +13,7 @@ require 'crack'
 require 'cgi'
 
 module LinkedIn
+  
   class LinkedInError < StandardError
     attr_reader :data
 
@@ -65,6 +66,9 @@ module LinkedIn
   end
 end
 
+#LinkedIn.autoload(:Profile, File.join('linked_in', 'profile'))
+#autoload :Recommendation, File.join('linked_in', 'recommendation')
+  
 directory = File.expand_path(File.dirname(__FILE__))
 
 require File.join(directory, 'linked_in', 'api_standard_profile_request')
