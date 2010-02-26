@@ -1,0 +1,54 @@
+<network>
+  <updates total="1">
+    <update>
+      <timestamp>1257187431000</timestamp>
+      <update-key>STAT-54321-11</update-key>
+      <update-type>STAT</update-type>
+      <update-content>
+        <person>
+          <id>abcdefg</id>
+          <first-name>Richard</first-name>
+          <last-name>Brautigan</last-name>
+          <headline>Author</headline>
+          <current-status>is thinking about rivers.</current-status>
+          <api-standard-profile-request>
+            <url>http://api.linkedin.com/v1/people/abcdefg:full</url>
+            <headers total="1">
+              <http-header>
+                <name>x-li-auth-token</name>
+                <value>name:abcdefg</value>
+              </http-header>
+            </headers>
+          </api-standard-profile-request>
+          <site-standard-profile-request>
+            <url>http://www.linkedin.com/profile?viewProfile=&amp;key=abcdefg&amp;authToken=abcdefg&amp;authType=name</url>
+          </site-standard-profile-request>
+        </person>
+      </update-content>
+      <is-commentable>true</is-commentable>
+      <update-comments total="1">
+        <update-comment>
+          <sequence-number>0</sequence-number>
+          <comment>You've got me thinking about trout.</comment>
+          <person>
+            <id>dsfsf</id>
+            <first-name>Gertrude</first-name>
+            <last-name>Stein</last-name>
+            <headline>Author</headline>
+            <api-standard-profile-request>
+              <url>http://api.linkedin.com/v1/people/dsfsf:full</url>
+              <headers total="1">
+                <http-header>
+                  <name>x-li-auth-token</name>
+                  <value>name:dsfsf</value>
+                </http-header>
+              </headers>
+            </api-standard-profile-request>
+            <site-standard-profile-request>
+              <url>http://www.linkedin.com/profile?viewProfile=&amp;key=dsfsf&amp;authToken=dsfsf&amp;authType=name</url>
+            </site-standard-profile-request>
+          </person>
+        </update-comment>
+    </update>
+  </update>
+</network>

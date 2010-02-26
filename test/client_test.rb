@@ -17,7 +17,7 @@ class ClientTest < Test::Unit::TestCase
       p.last_name.should == 'Netherland'
       p.positions.size.should == 4
       p.positions.first.company.name.should == 'Orrka'
-      
+           
       hp = p.positions[2]
       hp.start_month.should == 10
       hp.start_year.should == 2004
@@ -67,6 +67,7 @@ class ClientTest < Test::Unit::TestCase
       results.count == 10
       results.profiles.first.first_name.should == 'Zach'
       results.profiles.first.last_name.should == 'Inglis'
+      results.profiles.first.api_standard_profile_request.url.should == "http://api.linkedin.com/v1/people/U6YB1O2bqv:full"      
     end
     
     should "perform a search by multiple keywords" do
@@ -134,10 +135,17 @@ class ClientTest < Test::Unit::TestCase
     should "retreive network updates with recommendations" do
       stub_get("/v1/people/~/network?type=PREC", "network_status_with_recommend.xml")
       stats = @linkedin.network_updates(:type => "PREC")
-      stats.updates.first.profile.recommendations_given.first.recommendation_type == "EDU"
-      stats.updates.first.profile.recommendations_given.first.recommendee.first_name == "David"
+      stats.updates.first.profile.recommendations_given.first.recommendation_type.should == "EDU"
+      stats.updates.first.profile.recommendations_given.first.recommendee.first_name.should == "David"
     end
 
+    should "retreive network updates with comments" do
+      stub_get("/v1/people/~/network", "network_with_comments.xml")
+      stats = @linkedin.network_updates
+      stats.updates.first.comments.first.comment.should == "You've got me thinking about trout."
+      stats.updates.first.comments.first.person.first_name.should == "Gertrude"
+    end    
+    
   end
   
 end
