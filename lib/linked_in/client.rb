@@ -57,6 +57,13 @@ module LinkedIn
       raise_errors(response)
       response
     end
+
+    def post(path, body, options={})
+      path = "/v1#{path}"
+      response = access_token.post(path, body, options)
+      raise_errors(response)
+      response
+    end
     
     def delete(path, options={})
       path = "/v1#{path}"
@@ -128,7 +135,10 @@ module LinkedIn
       Network.from_xml(get(to_uri(path, options)))
     end
     
-    
+    def post_network_update(html)
+      path = "/people/~/person-activities"
+      post(path, network_update_to_xml(html), {'Content-Type' => 'application/xml'})
+    end    
     
     
     # helpful in making authenticated calls and writing the 
@@ -210,6 +220,14 @@ module LinkedIn
         <current-status>#{status}</current-status>}
       end
 
+      def network_update_to_xml(html)
+        %Q{<?xml version="1.0" encoding="UTF-8"?>
+        <activity locale="en_US">
+          <content-type>linkedin-html</content-type>
+          <body>#{CGI.escapeHTML(html)}</body>
+        </activity>
+      }
+      end
     
   end
 end
