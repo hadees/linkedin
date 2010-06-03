@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Wynn Netherland"]
-  s.date = %q{2010-06-01}
+  s.date = %q{2010-06-03}
   s.description = %q{Ruby wrapper for the LinkedIn API}
   s.email = %q{wynn.netherland@gmail.com}
   s.extra_rdoc_files = [
@@ -28,15 +28,19 @@ Gem::Specification.new do |s|
      "lib/linked_in/company.rb",
      "lib/linked_in/connections.rb",
      "lib/linked_in/country.rb",
+     "lib/linked_in/date_of_birth.rb",
      "lib/linked_in/education.rb",
      "lib/linked_in/error.rb",
      "lib/linked_in/group.rb",
+     "lib/linked_in/im_account.rb",
      "lib/linked_in/location.rb",
      "lib/linked_in/network.rb",
      "lib/linked_in/people.rb",
+     "lib/linked_in/phone_number.rb",
      "lib/linked_in/position.rb",
      "lib/linked_in/profile.rb",
      "lib/linked_in/recommendation.rb",
+     "lib/linked_in/twitter_account.rb",
      "lib/linked_in/update.rb",
      "lib/linked_in/url_resource.rb",
      "lib/linkedin.rb",
