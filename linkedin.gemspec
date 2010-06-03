@@ -102,4 +102,3 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<fakeweb>, [">= 1.2.5"])
   end
 end
-
