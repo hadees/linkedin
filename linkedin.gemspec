@@ -78,7 +78,7 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<oauth>, ["~> 0.4.0"])
+      s.add_runtime_dependency(%q<oauth>, [">= 0.4.0"])
       s.add_runtime_dependency(%q<roxml>, ["~> 3.1.3"])
       s.add_runtime_dependency(%q<crack>, ["~> 0.1.4"])
       s.add_development_dependency(%q<shoulda>, [">= 2.10.3"])
@@ -86,7 +86,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<mocha>, ["= 0.9.8"])
       s.add_development_dependency(%q<fakeweb>, [">= 1.2.8"])
     else
-      s.add_dependency(%q<oauth>, ["~> 0.4.0"])
+      s.add_dependency(%q<oauth>, [">= 0.4.0"])
       s.add_dependency(%q<roxml>, ["~> 3.1.3"])
       s.add_dependency(%q<crack>, ["~> 0.1.4"])
       s.add_dependency(%q<shoulda>, [">= 2.10.3"])
@@ -95,7 +95,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<fakeweb>, [">= 1.2.8"])
     end
   else
-    s.add_dependency(%q<oauth>, ["~> 0.4.0"])
+    s.add_dependency(%q<oauth>, [">= 0.4.0"])
     s.add_dependency(%q<roxml>, ["~> 3.1.3"])
     s.add_dependency(%q<crack>, ["~> 0.1.4"])
     s.add_dependency(%q<shoulda>, [">= 2.10.3"])
