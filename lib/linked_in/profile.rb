@@ -10,6 +10,7 @@ module LinkedIn
     xml_reader :industry
     xml_reader :distance, :as => Integer
     xml_reader :relation_to_viewer, :as => {:key => :name, :value => :content}
+    xml_reader :num_connections, :as => Integer
     xml_reader :num_recommenders, :as => Integer
     xml_reader :current_status
     xml_reader :current_status_timestamp
@@ -22,11 +23,16 @@ module LinkedIn
     xml_reader :interests
     xml_reader :positions, :as => [Position]
     xml_reader :education, :as => [Education]
+    xml_reader :im_accounts, :as => [ImAccount]
+    xml_reader :phone_numbers, :as => [PhoneNumber]
+    xml_reader :twitter_accounts, :as => [TwitterAccount]
+    xml_reader :date_of_birth, :as => DateOfBirth
+    xml_reader :main_address
     xml_reader :three_current_positions, :as => [Position]
     xml_reader :member_url_resources, :as => [UrlResource], :from => 'member-url-resources/member-url'
     xml_reader :api_standard_profile_request
     xml_reader :site_standard_profile_request, :as => ApiStandardProfileRequest
     xml_reader :picture_url
-
+    xml_reader :public_profile_url
   end
 end
