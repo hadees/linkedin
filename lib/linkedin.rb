@@ -71,6 +71,11 @@ end
   
 directory = File.expand_path(File.dirname(__FILE__))
 
+require File.join(directory, 'linked_in', 'date_of_birth')
+require File.join(directory, 'linked_in', 'im_account')
+require File.join(directory, 'linked_in', 'phone_number')
+require File.join(directory, 'linked_in', 'twitter_account')
+
 require File.join(directory, 'linked_in', 'api_standard_profile_request')
 require File.join(directory, 'linked_in', 'activity')
 require File.join(directory, 'linked_in', 'url_resource')
